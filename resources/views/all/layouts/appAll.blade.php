@@ -20,6 +20,7 @@
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
+    <link href="{{ asset('Bootslander/assets/css/all.css') }}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="{{ asset('Bootslander/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('Bootslander/assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
@@ -61,7 +62,7 @@
                         <h1>Membangun Desa yang Transparan, Inovatif, dan Sejahtera dengan <span>SiDesa</span></h1>
                         <p>SiDesa – Kemudahan Akses Informasi dan Layanan Publik dalam Genggaman!</p>
                         {{-- <div class="d-flex">
-                            <a href="#about" class="btn-get-started">Get Started</a>
+                            <a href="#ProfilDesa" class="btn-get-started">Get Started</a>
                             <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8"
                                 class="glightbox btn-watch-video d-flex align-items-center"><i
                                     class="bi bi-play-circle"></i><span>Watch Video</span></a>
@@ -90,18 +91,18 @@
 
         </section><!-- /Hero Section -->
 
-        <!-- About Section -->
+        <!-- about Section -->
         <section id="about" class="about section">
 
             <div class="container" data-aos="fade-up" data-aos-delay="100">
                 <div class="row align-items-xl-center gy-5">
 
                     <div class="col-xl-5 content">
-                        <h3>About Us</h3>
-                        <h2>Ducimus rerum libero reprehenderit cumque</h2>
-                        <p>Ipsa sint sit. Quis ducimus tempore dolores impedit et dolor cumque alias maxime. Enim
-                            reiciendis minus et rerum hic non. Dicta quas cum quia maiores iure. Quidem nulla qui
-                            assumenda incidunt voluptatem tempora deleniti soluta.</p>
+                        <h3>sidesaku</h3>
+                        <h2>Jelajahi SiDesaKu</h2>
+                        <p>Melalui website ini Anda dapat menjelajahi segala hal yang
+                            terkait dengan Desa. Aspek pemerintahan, penduduk, demografi, potensi Desa,
+                            dan juga berita tentang Desa.</p>
                         <a href="#" class="read-more"><span>Read More</span><i
                                 class="bi bi-arrow-right"></i></a>
                     </div>
@@ -112,36 +113,36 @@
                             <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
                                 <div class="icon-box">
                                     <i class="bi bi-buildings"></i>
-                                    <h3>Eius provident</h3>
-                                    <p>Magni repellendus vel ullam hic officia accusantium ipsa dolor omnis dolor
-                                        voluptatem</p>
+                                    <h3>Profil Desa</h3>
+                                    <!-- <p>Magni repellendus vel ullam hic officia accusantium ipsa dolor omnis dolor -->
+                                    <!-- voluptatem</p> -->
                                 </div>
                             </div> <!-- End Icon Box -->
 
                             <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
                                 <div class="icon-box">
                                     <i class="bi bi-clipboard-pulse"></i>
-                                    <h3>Rerum aperiam</h3>
-                                    <p>Autem saepe animi et aut aspernatur culpa facere. Rerum saepe rerum voluptates
-                                        quia</p>
+                                    <h3>Infografis</h3>
+                                    <!-- <p>Autem saepe animi et aut aspernatur culpa facere. Rerum saepe rerum voluptates -->
+                                    <!-- quia</p> -->
                                 </div>
                             </div> <!-- End Icon Box -->
 
                             <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
                                 <div class="icon-box">
                                     <i class="bi bi-command"></i>
-                                    <h3>Veniam omnis</h3>
-                                    <p>Omnis perferendis molestias culpa sed. Recusandae quas possimus. Quod consequatur
-                                        corrupti</p>
+                                    <h3>Informasi</h3>
+                                    <!-- <p>Omnis perferendis molestias culpa sed. Recusandae quas possimus. Quod consequatur -->
+                                    <!-- corrupti</p> -->
                                 </div>
                             </div> <!-- End Icon Box -->
 
                             <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
                                 <div class="icon-box">
                                     <i class="bi bi-graph-up-arrow"></i>
-                                    <h3>Delares sapiente</h3>
-                                    <p>Sint et dolor voluptas minus possimus nostrum. Reiciendis commodi eligendi omnis
-                                        quideme lorenda</p>
+                                    <h3>PPID</h3>
+                                    <!-- <p>Sint et dolor voluptas minus possimus nostrum. Reiciendis commodi eligendi omnis -->
+                                    <!-- quideme lorenda</p> -->
                                 </div>
                             </div> <!-- End Icon Box -->
 
@@ -151,7 +152,43 @@
                 </div>
             </div>
 
-        </section><!-- /About Section -->
+        </section><!-- /about Section -->
+
+        <!-- ProfilDesa Section -->
+        <section id="ProfilDesa" class="ProfilDesa section">
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="container py-5">
+                    <div class="row justify-content-center">
+                        <div class="col-md-10">
+                            <!-- Visi -->
+                            <div class="profil-box text-center">
+                                <h2 class="profil-title">Visi</h2>
+                                <p>“Desa Kersik sebagai Desa Wisata yang mampu mengelolah potensi Desa dan pembangunan berkelanjutan untuk mewujudkan masyarakat yang sejahtera”</p>
+                            </div>
+
+                            <!-- Misi -->
+                            <div class="profil-box mt-4 ">
+                                <h2 class="profil-title text-center">Misi</h2>
+                                <ol>
+                                    <li>Mewujudkan tata kelola pemerintahan yang baik</li>
+                                    <li>Mengembangkan kegiatan keagamaan</li>
+                                    <li>Meningkatkan kualitas pendidikan dan sumber daya manusia</li>
+                                    <li>Mengembangkan teknologi informasi</li>
+                                    <li>Pembangunan infrastruktur, sarana dan prasarana</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                    </div>
+                </div>
+
+            </div>
+            </div>
+
+        </section><!-- /ProfilDesa Section -->
 
         <!-- Features Section -->
         <section id="features" class="features section">
@@ -444,20 +481,20 @@
 
                 <div class="swiper init-swiper">
                     <script type="application/json" class="swiper-config">
-            {
-                "loop": true,
-                "speed": 600,
-                "autoplay": {
-                "delay": 5000
-                },
-                "slidesPerView": "auto",
-                "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-                }
-            }
-            </script>
+                        {
+                            "loop": true,
+                            "speed": 600,
+                            "autoplay": {
+                                "delay": 5000
+                            },
+                            "slidesPerView": "auto",
+                            "pagination": {
+                                "el": ".swiper-pagination",
+                                "type": "bullets",
+                                "clickable": true
+                            }
+                        }
+                    </script>
                     <div class="swiper-wrapper">
 
                         <div class="swiper-slide">
