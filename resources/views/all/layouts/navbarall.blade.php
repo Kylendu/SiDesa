@@ -12,7 +12,7 @@
         <nav id="navmenu" class="navmenu">
             <ul>
                 <li><a href="#hero" class="active">Home</a></li>
-                <li><a href="#about">Profil Desa</a></li>
+                <li><a href="#ProfilDesa">Profil Desa</a></li>
                 <li><a href="#features">Infografis</a></li>
                 <li><a href="#gallery">Listing</a></li>
                 {{-- <li><a href="#team">Team</a></li> --}}

@@ -92,11 +92,10 @@
         </section><!-- /Hero Section -->
 
         <!-- about Section -->
-        <section id="about" class="about section">
+        <section id="hero" class="about section">
 
             <div class="container" data-aos="fade-up" data-aos-delay="100">
                 <div class="row align-items-xl-center gy-5">
-
                     <div class="col-xl-5 content">
                         <h3>sidesaku</h3>
                         <h2>Jelajahi SiDesaKu</h2>
@@ -114,8 +113,6 @@
                                 <div class="icon-box">
                                     <i class="bi bi-buildings"></i>
                                     <h3>Profil Desa</h3>
-                                    <!-- <p>Magni repellendus vel ullam hic officia accusantium ipsa dolor omnis dolor -->
-                                    <!-- voluptatem</p> -->
                                 </div>
                             </div> <!-- End Icon Box -->
 
@@ -123,8 +120,6 @@
                                 <div class="icon-box">
                                     <i class="bi bi-clipboard-pulse"></i>
                                     <h3>Infografis</h3>
-                                    <!-- <p>Autem saepe animi et aut aspernatur culpa facere. Rerum saepe rerum voluptates -->
-                                    <!-- quia</p> -->
                                 </div>
                             </div> <!-- End Icon Box -->
 
@@ -132,8 +127,6 @@
                                 <div class="icon-box">
                                     <i class="bi bi-command"></i>
                                     <h3>Informasi</h3>
-                                    <!-- <p>Omnis perferendis molestias culpa sed. Recusandae quas possimus. Quod consequatur -->
-                                    <!-- corrupti</p> -->
                                 </div>
                             </div> <!-- End Icon Box -->
 
@@ -141,34 +134,30 @@
                                 <div class="icon-box">
                                     <i class="bi bi-graph-up-arrow"></i>
                                     <h3>PPID</h3>
-                                    <!-- <p>Sint et dolor voluptas minus possimus nostrum. Reiciendis commodi eligendi omnis -->
-                                    <!-- quideme lorenda</p> -->
                                 </div>
                             </div> <!-- End Icon Box -->
 
                         </div>
                     </div>
-
                 </div>
             </div>
-
         </section><!-- /about Section -->
 
         <!-- ProfilDesa Section -->
-        <section id="ProfilDesa" class="ProfilDesa section">
+        <section id="ProfilDesa" class="ProfilDesa section dark-background">
 
             <div class="container" data-aos="fade-up" data-aos-delay="100">
                 <div class="container py-5">
                     <div class="row justify-content-center">
                         <div class="col-md-10">
                             <!-- Visi -->
-                            <div class="profil-box text-center">
-                                <h2 class="profil-title">Visi</h2>
+                            <div class="profil-box text-center text-black">
+                                <h2 class="profil-title ">Visi</h2>
                                 <p>“Desa Kersik sebagai Desa Wisata yang mampu mengelolah potensi Desa dan pembangunan berkelanjutan untuk mewujudkan masyarakat yang sejahtera”</p>
                             </div>
 
                             <!-- Misi -->
-                            <div class="profil-box mt-4 ">
+                            <div class="profil-box mt-4 text-black">
                                 <h2 class="profil-title text-center">Misi</h2>
                                 <ol>
                                     <li>Mewujudkan tata kelola pemerintahan yang baik</li>
@@ -181,13 +170,90 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            </div>
 
+            <!-- penjelasan profildesa -->
+            <section id="ProfilDesa" class="ProfilDesa section light-background">
+
+                <div class="container ">
+                    <h2 class="text-danger fw-bold">Bagan Desa</h2>
+                    <div class="row">
+                        <!-- Struktur Organisasi Pemerintahan Desa -->
+                        <div class="col-md-6 mb-4">
+                            <h5 class="profil-title text-center fw-bold">Struktur Organisasi Pemerintahan Desa</h5>
+                            <div class="bg-white p-3 rounded shadow">
+                                <img src="{{ asset('Bootslander/assets/img/StrukturOrganisasiDesa.png') }}" class="img-fluid w-100" alt="Struktur Pemerintahan Desa">
+                            </div>
+                        </div>
+
+                        <!-- Struktur Organisasi BPD -->
+                        <div class="col-md-6 mb-4">
+                            <h5 class="profil-title text-center fw-bold">Struktur Organisasi Badan Permusyawaratan Desa</h5>
+                            <div class="bg-white p-3 rounded shadow">
+                                <img src="{{ asset('Bootslander/assets/img/bpd.png') }}" class="img-fluid w-100" alt="Struktur BPD">
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-            </div>
-            </div>
+                <!-- peta lokasi pada profil desa -->
+                <div class="container my-5">
+                    <h2 class="text-danger fw-bold">Peta Lokasi Desa</h2>
+                    <div class="row g-4">
+                        <!-- Informasi Desa -->
+                        <div class="col-md-6">
+                            <div class="bg-white p-4 rounded shadow-sm text-dark">
+                                <h5 class="profil-title fw-bold mb-3">Batas Desa:</h5>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <p><strong>Utara</strong><br>Desa Santan Ulu dan Desa Santan Ilir</p>
+                                        <p><strong>Selatan</strong><br>Selat Makassar dan Desa Semangko</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p><strong>Timur</strong><br>Selat Makassar</p>
+                                        <p><strong>Barat</strong><br>Desa Santan Ulu</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <p><strong>Luas Desa:</strong> 421.000 m<sup>2</sup></p>
+                                <hr>
+                                <p><strong>Jumlah Penduduk:</strong> 1.153 Jiwa</p>
+                            </div>
+                        </div>
 
+                        <!-- Google Maps -->
+                        <div class="col-md-6">
+                            <div class="rounded shadow-sm overflow-hidden" style="min-height: 300px;">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31672.333243976573!2d112.70721572396627!3d-7.121171009418171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd803ef5abbb1f5%3A0x2064393fc9111d5c!2sTelang%2C%20Kec.%20Kamal%2C%20Kabupaten%20Bangkalan%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1744990801558!5m2!1sid!2sid" 
+                                    width="100%"
+                                    height="300"
+                                    style="border:0;"
+                                    allowfullscreen=""
+                                    loading="lazy">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <!-- wave -->
+            <svg class="ProfilDesa-waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none">
+                <defs>
+                    <path id="wave-path" d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="wave1">
+                    <use xlink:href="#wave-path" x="50" y="3" />
+                </g>
+                <g class="wave2">
+                    <use xlink:href="#wave-path" x="50" y="0" />
+                </g>
+                <g class="wave3">
+                    <use xlink:href="#wave-path" x="50" y="9" />
+                </g>
+            </svg>
         </section><!-- /ProfilDesa Section -->
 
         <!-- Features Section -->
