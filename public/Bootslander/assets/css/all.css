@@ -10,6 +10,16 @@
     color: #00008B; /* DarkBlue */
     font-weight: bold;
 }
+/* Navbar logo */
+.floating {
+  animation: floatY 2.5s ease-in-out infinite;
+}
+
+@keyframes floatY {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-3.5px); }
+  100% { transform: translateY(0); }
+}
 
 /* animasi ombak */
 .ProfilDesa-waves {

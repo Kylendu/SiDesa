@@ -41,7 +41,10 @@
 </head>
 
 <body class="index-page">
-
+    {{-- @php
+        dd($ketikan);
+        die;
+    @endphp --}}
     <!-- ======= Header ======= -->
     @include('all.layouts.navbarall')
     <!-- End Header -->
@@ -56,9 +59,13 @@
                     <div class="col-lg-4 order-lg-last hero-img" data-aos="zoom-out" data-aos-delay="100">
                         <img src="{{ asset('Bootslander/assets/img/hero-img.png') }}" class="img-fluid animated" alt="">
                     </div>
-
+                    
                     <div class="col-lg-6  d-flex flex-column justify-content-center" data-aos="fade-in">
-                        <h1>Membangun Desa yang Transparan, Inovatif, dan Sejahtera dengan <span>SiDesa</span></h1>
+                        <h1>Membangun Desa yang 
+                            <div>
+                                <span id="typed"></span>
+                            </div>
+                            dan Sejahtera dengan <span>SiDesa</span></h1>
                         <p>SiDesa – Kemudahan Akses Informasi dan Layanan Publik dalam Genggaman!</p>
                         {{-- <div class="d-flex">
                             <a href="#ProfilDesa" class="btn-get-started">Get Started</a>
@@ -95,6 +102,7 @@
             <div class="container" data-aos="fade-up" data-aos-delay="100">
                 <div class="row align-items-xl-center gy-5">
                     <div class="col-xl-5 content">
+                        {{-- <img src="{{ url('public.images.Roket.jpg') }}" alt=""> --}}
                         <h3>sidesaku</h3>
                         <h2>Jelajahi SiDesaKu</h2>
                         <p>Melalui website ini Anda dapat menjelajahi segala hal yang
@@ -361,7 +369,7 @@
                     <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
                         <i class="bi bi-people"></i>
                         <div class="stats-item">
-                            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
+                            <span data-purecounter-start="0" data-purecounter-end="{{ $residents }}" data-purecounter-duration="1"
                                 class="purecounter"></span>
                             <p>Total Penduduk</p>
                         </div>
@@ -370,7 +378,7 @@
                     <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
                         <i class="bi bi-journal-richtext"></i>
                         <div class="stats-item">
-                            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
+                            <span data-purecounter-start="0" data-purecounter-end="{{ $headFamilies }}" data-purecounter-duration="1"
                                 class="purecounter"></span>
                             <p>Kepala Keluarga</p>
                         </div>
@@ -821,6 +829,20 @@
     <!-- Main JS File -->
     <script src="{{ asset('Bootslander/assets/js/main.js') }}"></script>
 
+    <!-- Typed JS -->
+    <script src="https://unpkg.com/typed.js@2.1.0"></script>
+    <script>
+        var options = {
+            strings: ["Transparan", "Modern", "Maju", 'Berdaya', 'Mandiri'],
+            typeSpeed: 50,
+            backSpeed: 50,
+            loop: true,
+            showCursor: true,
+            cursorChar: '|',
+        };
+    
+        var typed = new Typed("#typed", options);
+    </script>
 </body>
 
 </html>

@@ -3,7 +3,7 @@
 
         <a href="index.html" class="logo d-flex align-items-center">
             <!-- Uncomment the line below if you also wish to use an image logo -->
-            {{-- <img src="{{ asset('Bootslander/assets/img/logo.png')}}" alt=""> --}}
+            <img src="{{ asset('Bootslander/assets/img/logo.png')}}" alt="" class="floating">
             <h1 class="sitename">SiDesa</h1>
         </a>
 
