@@ -3,6 +3,7 @@
 use App\Models\Resident;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ResidentController;
+use App\Http\Controllers\InformationController;
 use App\Http\Controllers\ServiceDocumentController;
 
 Route::get('/coba', function () {
@@ -14,3 +15,5 @@ Route::get('/coba', function () {
 Route::post('/ajaxupload', [ServiceDocumentController::class, 'upload']);
 
 Route::get('/', [ResidentController::class, 'count']);
+Route::post('/pengaduan/store', [InformationController::class, 'storePengaduan'])->name('pengaduan.store');
+Route::get('/berita', [InformationController::class, 'berita'])->name('berita');

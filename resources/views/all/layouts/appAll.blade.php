@@ -11,6 +11,7 @@
     <!-- Favicons -->
     <link href="{{ asset('Bootslander/assets/img/favicon.png') }}" rel="icon">
     <link href="{{ asset('Bootslander/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -41,25 +42,35 @@
 </head>
 
 <body class="index-page">
-    {{-- @php
-        dd($ketikan);
-        die;
-    @endphp --}}
     <!-- ======= Header ======= -->
     @include('all.layouts.navbarall')
     <!-- End Header -->
 
-    <!-- ======= Hero Section ======= -->
-    @include('all.layouts.heroAll')
-    <!-- End Hero Section -->
+    {{-- diisi content --}}
+    <main>
+        @yield('content')
+    </main>
+    {{-- diisi content --}}
 
     <!-- Footer -->
     @include('all.layouts.footerAll')
     <!-- End Footer -->
 
-    <!-- Scroll Top -->
-    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
+    <!-- Container Tombol -->
+    <div class="floating-buttons">
+        <a href="#" id="aduan-button" class="aduan-button" data-bs-toggle="modal" data-bs-target="#aduanModal">
+            <i class="bi bi-headset me-2"></i> Pengaduan
+        </a>
+
+        <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+            <i class="bi bi-arrow-up-short"></i>
+        </a>
+    </div>
+    <!-- End Container Tombol -->
+
+    <!-- Modal Form Pengaduan -->
+    @include('all.pages.modalPengaduan')
+    <!-- End Modal Form Pengaduan -->
 
     <!-- Preloader -->
     <div id="preloader"></div>
@@ -74,6 +85,8 @@
 
     <!-- Main JS File -->
     <script src="{{ asset('Bootslander/assets/js/main.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     <!-- Typed JS -->
     <script src="https://unpkg.com/typed.js@2.1.0"></script>

@@ -1,4 +1,5 @@
-<main class="main">
+@extends('all.layouts.appAll')
+@section('content')
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
         <img src="{{ asset('Bootslander/assets/img/hero-bg-2.jpg') }}" alt="" class="hero-bg">
@@ -8,20 +9,21 @@
                 <div class="col-lg-4 order-lg-last hero-img" data-aos="zoom-out" data-aos-delay="100">
                     <img src="{{ asset('Bootslander/assets/img/hero-img.png') }}" class="img-fluid animated" alt="">
                 </div>
-                
+
                 <div class="col-lg-6  d-flex flex-column justify-content-center" data-aos="fade-in">
-                    <h1>Membangun Desa yang 
+                    <h1>Membangun Desa yang
                         <div>
                             <span id="typed"></span>
                         </div>
-                        dan Sejahtera dengan <span>SiDesa</span></h1>
+                        dan Sejahtera dengan <span>SiDesa</span>
+                    </h1>
                     <p>SiDesa – Kemudahan Akses Informasi dan Layanan Publik dalam Genggaman!</p>
                     {{-- <div class="d-flex">
-                        <a href="#ProfilDesa" class="btn-get-started">Get Started</a>
-                        <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8"
-                            class="glightbox btn-watch-video d-flex align-items-center"><i
-                                class="bi bi-play-circle"></i><span>Watch Video</span></a>
-                    </div> --}}
+                            <a href="#ProfilDesa" class="btn-get-started">Get Started</a>
+                            <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8"
+                                class="glightbox btn-watch-video d-flex align-items-center"><i
+                                    class="bi bi-play-circle"></i><span>Watch Video</span></a>
+                        </div> --}}
                 </div>
 
             </div>
@@ -52,13 +54,12 @@
             <div class="row align-items-xl-center gy-5">
                 <div class="col-xl-5 content">
                     {{-- <img src="{{ url('public.images.Roket.jpg') }}" alt=""> --}}
-                    <h3>sidesaku</h3>
+                    <h2>sidesaku</h2>
                     <h2>Jelajahi SiDesaKu</h2>
-                    <p>Melalui website ini Anda dapat menjelajahi segala hal yang
+                    <p class="fw-bold">Melalui website ini Anda dapat menjelajahi segala hal yang
                         terkait dengan Desa. Aspek pemerintahan, penduduk, demografi, potensi Desa,
                         dan juga berita tentang Desa.</p>
-                    <a href="#" class="read-more"><span>Read More</span><i
-                            class="bi bi-arrow-right"></i></a>
+                    <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
                 </div>
 
                 <div class="col-xl-7">
@@ -98,7 +99,7 @@
     </section><!-- /about Section -->
 
     <!-- ProfilDesa Section -->
-    <section id="prifilDesa" class="VisiMisi section dark-background pt-0">
+    <section id="profilDesa" class="VisiMisi section dark-background pt-0">
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="container p-5">
@@ -107,7 +108,8 @@
                         <!-- Visi -->
                         <div class="profil-box text-center text-black">
                             <h2 class="profil-title ">Visi</h2>
-                            <p>“Desa Kersik sebagai Desa Wisata yang mampu mengelolah potensi Desa dan pembangunan berkelanjutan untuk mewujudkan masyarakat yang sejahtera”</p>
+                            <p>“Desa Kersik sebagai Desa Wisata yang mampu mengelolah potensi Desa dan pembangunan
+                                berkelanjutan untuk mewujudkan masyarakat yang sejahtera”</p>
                         </div>
 
                         <!-- Misi -->
@@ -130,13 +132,14 @@
         <!-- penjelasan profildesa -->
         <section id="ProfilDesa" class="ProfilDesa section light-background">
             <div class="container ">
-                <h2 class="text-danger fw-bold">Bagan Desa</h2>
+                <h2 class="fw-bold">Bagan Desa</h2>
                 <div class="row">
                     <!-- Struktur Organisasi Pemerintahan Desa -->
                     <div class="col-md-6 mb-4">
                         <h5 class="profil-title text-center fw-bold">Struktur Organisasi Pemerintahan Desa</h5>
                         <div class="bg-white p-3 rounded shadow">
-                            <img src="{{ asset('Bootslander/assets/img/StrukturOrganisasiDesa.png') }}" class="img-fluid w-100" alt="Struktur Pemerintahan Desa">
+                            <img src="{{ asset('Bootslander/assets/img/StrukturOrganisasiDesa.png') }}"
+                                class="img-fluid w-100" alt="Struktur Pemerintahan Desa">
                         </div>
                     </div>
 
@@ -144,7 +147,8 @@
                     <div class="col-md-6 mb-4">
                         <h5 class="profil-title text-center fw-bold">Struktur Organisasi Badan Permusyawaratan Desa</h5>
                         <div class="bg-white p-3 rounded shadow">
-                            <img src="{{ asset('Bootslander/assets/img/bpd.png') }}" class="img-fluid w-100" alt="Struktur BPD">
+                            <img src="{{ asset('Bootslander/assets/img/bpd.png') }}" class="img-fluid w-100"
+                                alt="Struktur BPD">
                         </div>
                     </div>
                 </div>
@@ -153,9 +157,11 @@
             <!-- peta lokasi pada profil desa -->
         </section>
 
+        <!-- peta lokasi -->
         <section id="listing" class="listing section p-0">
             <div class="container my-5">
-                <h2 class="text-danger fw-bold">Peta Lokasi Desa</h2>
+                <h1 class="fw-bold">Peta Lokasi Desa</h1>
+                <p>Menampilkan Peta Desa Dengan Interest Point Desa</p>
                 <div class="row g-4">
                     <!-- Informasi Desa -->
                     <div class="col-md-6">
@@ -182,12 +188,8 @@
                     <div class="col-md-6">
                         <div class="rounded shadow-sm overflow-hidden" style="min-height: 300px;">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31672.333243976573!2d112.70721572396627!3d-7.121171009418171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd803ef5abbb1f5%3A0x2064393fc9111d5c!2sTelang%2C%20Kec.%20Kamal%2C%20Kabupaten%20Bangkalan%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1744990801558!5m2!1sid!2sid" 
-                                width="100%"
-                                height="300"
-                                style="border:0;"
-                                allowfullscreen=""
-                                loading="lazy">
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31672.333243976573!2d112.70721572396627!3d-7.121171009418171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd803ef5abbb1f5%3A0x2064393fc9111d5c!2sTelang%2C%20Kec.%20Kamal%2C%20Kabupaten%20Bangkalan%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1744990801558!5m2!1sid!2sid"
+                                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
                             </iframe>
                         </div>
                     </div>
@@ -195,7 +197,8 @@
             </div>
         </section>
         <!-- wave -->
-        <svg class="ProfilDesa-waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none">
+        <svg class="ProfilDesa-waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28"
+            preserveAspectRatio="none">
             <defs>
                 <path id="wave-path" d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
             </defs>
@@ -212,465 +215,228 @@
     </section><!-- /ProfilDesa Section -->
 
     <!-- Features Section -->
-    <section id="features" class="features section">
+    <section id="infografis" class="features section">
 
         <div class="container">
-
-            <div class="row gy-4">
-
-                <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="features-item">
-                        <i class="bi bi-eye" style="color: #ffbb2c;"></i>
-                        <h3><a href="" class="stretched-link">Lorem Ipsum</a></h3>
-                    </div>
-                </div><!-- End Feature Item -->
-
-                <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="features-item">
-                        <i class="bi bi-infinity" style="color: #5578ff;"></i>
-                        <h3><a href="" class="stretched-link">Dolor Sitema</a></h3>
-                    </div>
-                </div><!-- End Feature Item -->
-
-                <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="features-item">
-                        <i class="bi bi-mortarboard" style="color: #e80368;"></i>
-                        <h3><a href="" class="stretched-link">Sed perspiciatis</a></h3>
-                    </div>
-                </div><!-- End Feature Item -->
-
-                <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="400">
-                    <div class="features-item">
-                        <i class="bi bi-nut" style="color: #e361ff;"></i>
-                        <h3><a href="" class="stretched-link">Magni Dolores</a></h3>
-                    </div>
-                </div><!-- End Feature Item -->
-
-                <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="500">
-                    <div class="features-item">
-                        <i class="bi bi-shuffle" style="color: #47aeff;"></i>
-                        <h3><a href="" class="stretched-link">Nemo Enim</a></h3>
-                    </div>
-                </div><!-- End Feature Item -->
-
-                <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="600">
-                    <div class="features-item">
-                        <i class="bi bi-star" style="color: #ffa76e;"></i>
-                        <h3><a href="" class="stretched-link">Eiusmod Tempor</a></h3>
-                    </div>
-                </div><!-- End Feature Item -->
-
-                <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="700">
-                    <div class="features-item">
-                        <i class="bi bi-x-diamond" style="color: #11dbcf;"></i>
-                        <h3><a href="" class="stretched-link">Midela Teren</a></h3>
-                    </div>
-                </div><!-- End Feature Item -->
-
-                <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="800">
-                    <div class="features-item">
-                        <i class="bi bi-camera-video" style="color: #4233ff;"></i>
-                        <h3><a href="" class="stretched-link">Pira Neve</a></h3>
-                    </div>
-                </div><!-- End Feature Item -->
-
-                <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="900">
-                    <div class="features-item">
-                        <i class="bi bi-command" style="color: #b2904f;"></i>
-                        <h3><a href="" class="stretched-link">Dirada Pack</a></h3>
-                    </div>
-                </div><!-- End Feature Item -->
-
-                <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="1000">
-                    <div class="features-item">
-                        <i class="bi bi-dribbble" style="color: #b20969;"></i>
-                        <h3><a href="" class="stretched-link">Moton Ideal</a></h3>
-                    </div>
-                </div><!-- End Feature Item -->
-
-                <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="1100">
-                    <div class="features-item">
-                        <i class="bi bi-activity" style="color: #ff5828;"></i>
-                        <h3><a href="" class="stretched-link">Verdo Park</a></h3>
-                    </div>
-                </div><!-- End Feature Item -->
-
-                <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="1200">
-                    <div class="features-item">
-                        <i class="bi bi-brightness-high" style="color: #29cc61;"></i>
-                        <h3><a href="" class="stretched-link">Flavor Nivelanda</a></h3>
-                    </div>
-                </div><!-- End Feature Item -->
-
+            <div>
+                <h1 class="fw-bold">Infografis
+                    siDesa</h1>
             </div>
+            <div class="row gy-4  align-items-center">
+                <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
+                    <img src="{{ asset('images/demograf_penduduk.png') }}" class="img-fluid" alt="">
+                </div>
+                <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="fw-bold">DEMOGRAFI PENDUDUK.</h2>
+                    <p class="fw-bold">
+                        Memberikan informasi lengkap mengenai karakteristik demografi penduduk suatu
+                        wilayah. Mulai dari jumlah penduduk, usia, jenis kelamin, tingkat pendidikan,
+                        pekerjaan, agama, dan aspek penting lainnya yang menggambarkan komposisi
+                        populasi secara rinci.
+                    </p>
+                </div>
+            </div>
+
+        </div>
 
         </div>
 
     </section><!-- /Features Section -->
 
     <!-- Stats Section -->
-    <section id="stats" class="stats section light-background">
-
+    <section id="stats" class="stats section light-background py-5">
         <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="row gy-4">
-
-                <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-                    <i class="bi bi-people"></i>
-                    <div class="stats-item">
-                        <span data-purecounter-start="0" data-purecounter-end="{{ $residents }}" data-purecounter-duration="1"
-                            class="purecounter"></span>
-                        <p>Total Penduduk</p>
-                    </div>
-                </div><!-- End Stats Item -->
-
-                <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-                    <i class="bi bi-journal-richtext"></i>
-                    <div class="stats-item">
-                        <span data-purecounter-start="0" data-purecounter-end="{{ $headFamilies }}" data-purecounter-duration="1"
-                            class="purecounter"></span>
-                        <p>Kepala Keluarga</p>
-                    </div>
-                </div><!-- End Stats Item -->
-
-                <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-                    <i class="bi bi-headst"></i>
-                    <div class="stats-item">
-                        <span data-purecounter-start="0" data-purecounter-end="1463"
-                            data-purecounter-duration="1" class="purecounter"></span>
-                        <p>Perempuan</p>
-                    </div>
-                </div><!-- End Stats Item -->
-
-                <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-                    <i class="bi bi-emoji-smile"></i>
-                    <div class="stats-item">
-                        <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
-                            class="purecounter"></span>
-                        <p>Laki-Laki</p>
-                    </div>
-                </div><!-- End Stats Item -->
-
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h2 class="fw-bold">Jumlah Penduduk dan Kepala Keluarga</h2>
+                </div>
             </div>
-
-        </div>
-
-    </section><!-- /Stats Section -->
-
-    <!-- Details Section -->
-    <section id="details" class="details section">
-
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Details</h2>
-            <div><span>Check Our</span> <span class="description-title">Details</span></div>
-        </div><!-- End Section Title -->
-
-        <div class="container">
-
-            <div class="row gy-4 align-items-center features-item">
-                <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
-                    <img src="{{ asset('Bootslander/assets/img/details-1.png') }}" class="img-fluid" alt="">
-                </div>
-                <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
-                    <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-                    <p class="fst-italic">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore
-                        magna aliqua.
-                    </p>
-                    <ul>
-                        <li><i class="bi bi-check"></i><span> Ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat.</span></li>
-                        <li><i class="bi bi-check"></i> <span>Duis aute irure dolor in reprehenderit in voluptate
-                                velit.</span></li>
-                        <li><i class="bi bi-check"></i> <span>Ullam est qui quos consequatur eos accusamus.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div><!-- Features Item -->
-
-            <div class="row gy-4 align-items-center features-item">
-                <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out"
-                    data-aos-delay="200">
-                    <img src="{{ asset('Bootslander/assets/img/details-2.png') }}" class="img-fluid" alt="">
-                </div>
-                <div class="col-md-7 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
-                    <h3>Corporis temporibus maiores provident</h3>
-                    <p class="fst-italic">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore
-                        magna aliqua.
-                    </p>
-                    <p>
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                        reprehenderit in voluptate
-                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in
-                        culpa qui officia deserunt mollit anim id est laborum
-                    </p>
-                </div>
-            </div><!-- Features Item -->
-
-            <div class="row gy-4 align-items-center features-item">
-                <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out">
-                    <img src="{{ asset('Bootslander/assets/img/details-3.png') }}" class="img-fluid" alt="">
-                </div>
-                <div class="col-md-7" data-aos="fade-up">
-                    <h3>Sunt consequatur ad ut est nulla consectetur reiciendis animi voluptas</h3>
-                    <p>Cupiditate placeat cupiditate placeat est ipsam culpa. Delectus quia minima quod. Sunt saepe
-                        odit aut quia voluptatem hic voluptas dolor doloremque.</p>
-                    <ul>
-                        <li><i class="bi bi-check"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat.</span></li>
-                        <li><i class="bi bi-check"></i><span> Duis aute irure dolor in reprehenderit in voluptate
-                                velit.</span></li>
-                        <li><i class="bi bi-check"></i> <span>Facilis ut et voluptatem aperiam. Autem soluta ad
-                                fugiat</span>.</li>
-                    </ul>
-                </div>
-            </div><!-- Features Item -->
-
-            <div class="row gy-4 align-items-center features-item">
-                <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out">
-                    <img src="{{ asset('Bootslander/assets/img/details-4.png') }}" class="img-fluid" alt="">
-                </div>
-                <div class="col-md-7 order-2 order-md-1" data-aos="fade-up">
-                    <h3>Quas et necessitatibus eaque impedit ipsum animi consequatur incidunt in</h3>
-                    <p class="fst-italic">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore
-                        magna aliqua.
-                    </p>
-                    <p>
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                        reprehenderit in voluptate
-                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in
-                        culpa qui officia deserunt mollit anim id est laborum
-                    </p>
-                </div>
-            </div><!-- Features Item -->
-
-        </div>
-
-    </section><!-- /Details Section -->
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery section">
-
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Gallery</h2>
-            <div><span>Check Our</span> <span class="description-title">Gallery</span></div>
-        </div><!-- End Section Title -->
-
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="row g-0">
-
-                <div class="col-lg-3 col-md-4">
-                    <div class="gallery-item">
-                        <a href="{{ asset('Bootslander/assets/img/gallery/gallery-1.jpg') }}" class="glightbox"
-                            data-gallery="images-gallery">
-                            <img src="{{ asset('Bootslander/assets/img/gallery/gallery-1.jpg') }}" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                </div><!-- End Gallery Item -->
-
-                <div class="col-lg-3 col-md-4">
-                    <div class="gallery-item">
-                        <a href="{{ asset('Bootslander/assets/img/gallery/gallery-2.jpg') }}" class="glightbox"
-                            data-gallery="images-gallery">
-                            <img src="{{ asset('Bootslander/assets/img/gallery/gallery-2.jpg') }}" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                </div><!-- End Gallery Item -->
-
-            </div>
-
-        </div>
-
-    </section><!-- /Gallery Section -->
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section dark-background">
-
-        <img src="{{ asset('Bootslander/assets/img/testimonials/testimonials-bg.jpg') }}" class="testimonials-bg" alt="">
-
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="swiper init-swiper">
-                <script type="application/json" class="swiper-config">
-                    {
-                        "loop": true,
-                        "speed": 600,
-                        "autoplay": {
-                            "delay": 5000
-                        },
-                        "slidesPerView": "auto",
-                        "pagination": {
-                            "el": ".swiper-pagination",
-                            "type": "bullets",
-                            "clickable": true
-                        }
-                    }
-                </script>
-                <div class="swiper-wrapper">
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <img src="{{ asset('Bootslander/assets/img/testimonials/testimonials-1.jpg') }}" class="testimonial-img"
-                                alt="">
-                            <h3>Saul Goodman</h3>
-                            <h4>Ceo &amp; Founder</h4>
-                            <div class="stars">
-                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i>
-                            </div>
-                            <p>
-                                <i class="bi bi-quote quote-icon-left"></i>
-                                <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum
-                                    suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et.
-                                    Maecen aliquam, risus at semper.</span>
-                                <i class="bi bi-quote quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div><!-- End testimonial item -->
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <img src="{{ asset('Bootslander/assets/img/testimonials/testimonials-2.jpg') }}" class="testimonial-img"
-                                alt="">
-                            <h3>Sara Wilsson</h3>
-                            <h4>Designer</h4>
-                            <div class="stars">
-                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i>
-                            </div>
-                            <p>
-                                <i class="bi bi-quote quote-icon-left"></i>
-                                <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum
-                                    quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat
-                                    irure amet legam anim culpa.</span>
-                                <i class="bi bi-quote quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div><!-- End testimonial item -->
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-
-        </div>
-
-    </section><!-- /Testimonials Section -->
-
-    <!-- Team Section -->
-    <section id="team" class="team section">
-
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Team</h2>
-            <div><span>Check Our</span> <span class="description-title">Team</span></div>
-        </div><!-- End Section Title -->
-
-        <div class="container">
-
-            <div class="row gy-5">
-
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="member">
-                        <div class="pic"><img src="{{ asset('Bootslander/assets/img/team/team-1.jpg') }}" class="img-fluid"
-                                alt=""></div>
-                        <div class="member-info">
-                            <h4>Walter White</h4>
-                            <span>Chief Executive Officer</span>
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter-x"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
+            <div class="row g-4">
+                <!-- Total Penduduk -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 text-center p-3 shadow-sm border-0 rounded">
+                        <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-total-penduduk-Du2cCbAO.svg"
+                            class="mx-auto" alt="Total Penduduk" width="80">
+                        <div class="card-body">
+                            <h6 class="text-secondary fw-bold">TOTAL PENDUDUK</h6>
+                            <h4 class="text-danger fw-bold"><span data-purecounter-start="0"
+                                    data-purecounter-end="{{ $residents }}" data-purecounter-duration="1"
+                                    class="purecounter"></span> <span class="text-muted">Jiwa</span></h4>
                         </div>
                     </div>
-                </div><!-- End Team Member -->
-
-            </div>
-
-        </div>
-
-    </section><!-- /Team Section -->
-
-    <!-- Faq Section -->
-    <section id="faq" class="faq section light-background">
-
-        <div class="container-fluid">
-
-            <div class="row gy-4">
-
-                <div class="col-lg-7 d-flex flex-column justify-content-center order-2 order-lg-1">
-
-                    <div class="content px-xl-5" data-aos="fade-up" data-aos-delay="100">
-                        <h3><span>Frequently Asked </span><strong>Questions</strong></h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-                        </p>
-                    </div>
-
-                    <div class="faq-container px-xl-5" data-aos="fade-up" data-aos-delay="200">
-
-                        <div class="faq-item faq-active">
-                            <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>Non consectetur a erat nam at lectus urna duis?</h3>
-                            <div class="faq-content">
-                                <p>Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus
-                                    laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor
-                                    rhoncus dolor purus non.</p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div><!-- End Faq item-->
-
-                        <div class="faq-item">
-                            <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?</h3>
-                            <div class="faq-content">
-                                <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id
-                                    interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus
-                                    scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim.
-                                    Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div><!-- End Faq item-->
-
-                        <div class="faq-item">
-                            <i class="faq-icon bi bi-question-circle"></i>
-                            <h3>Dolor sit amet consectetur adipiscing elit pellentesque?</h3>
-                            <div class="faq-content">
-                                <p>Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci.
-                                    Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl
-                                    suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis
-                                    convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
-                                </p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div><!-- End Faq item-->
-
-                    </div>
-
                 </div>
-
-                <div class="col-lg-5 order-1 order-lg-2">
-                    <img src="{{ asset('Bootslander/assets/img/faq.jpg') }}" class="img-fluid" alt="" data-aos="zoom-in"
-                        data-aos-delay="100">
+                <!-- Kepala Keluarga -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 text-center p-3 shadow-sm border-0 rounded">
+                        <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-kepala-keluarga-D4UfE36x.svg"
+                            class="mx-auto" alt="Kepala Keluarga" width="80">
+                        <div class="card-body">
+                            <h6 class="text-secondary fw-bold">KEPALA KELUARGA</h6>
+                            <h4 class="text-danger fw-bold"><span data-purecounter-start="0"
+                                    data-purecounter-end="{{ $headFamilies }}" data-purecounter-duration="1"
+                                    class="purecounter"></span> <span class="text-muted">Jiwa</span></h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- Perempuan -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 text-center p-3 shadow-sm border-0 rounded">
+                        <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-perempuan-BCmUG8mA.svg"
+                            class="mx-auto" alt="Perempuan" width="80">
+                        <div class="card-body">
+                            <h6 class="text-secondary fw-bold">PEREMPUAN</h6>
+                            <h4 class="text-danger fw-bold"><span data-purecounter-start="0"
+                                    data-purecounter-end="{{ $female }}" data-purecounter-duration="1"
+                                    class="purecounter"></span> <span class="text-muted">Jiwa</span></h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- Laki-Laki -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 text-center p-3 shadow-sm border-0 rounded">
+                        <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-laki-CmERQRaD.svg"
+                            class="mx-auto" alt="Laki-Laki" width="80">
+                        <div class="card-body">
+                            <h6 class="text-secondary fw-bold">LAKI-LAKI</h6>
+                            <h4 class="text-danger fw-bold"><span data-purecounter-start="0"
+                                    data-purecounter-end="{{ $male }}" data-purecounter-duration="1"
+                                    class="purecounter"></span> <span class="text-muted">Jiwa</span></h4>
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </div>
+    </section>
 
-    </section><!-- /Faq Section -->
+    <!-- stts kawin  -->
+    <section class="stats section light-background">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <h2 class="fw-bold mb-4">Berdasarkan Perkawinan</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card text-center p-3">
+                        <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-belum-kawin-B6LGf_QT.svg"
+                            class="mx-auto" width="80">
+                        <h5 class="text-secondary fw-bold">Belum Kawin</h5>
+                        <p class="text-danger fs-4 fw-bold"><span data-purecounter-start="0"
+                                data-purecounter-end="{{ $belumKawin }}" data-purecounter-duration="1"
+                                class="purecounter"></span></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center p-3">
+                        <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-kawin-DDA193Z5.svg"
+                            class="mx-auto" width="80">
+                        <h5 class="text-secondary fw-bold">Kawin</h5>
+                        <p class="text-danger fs-4 fw-bold"><span data-purecounter-start="0"
+                                data-purecounter-end="{{ $kawin }}" data-purecounter-duration="1"
+                                class="purecounter"></span></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center p-3">
+                        <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-cerai-mati-VdEzxQgX.svg"
+                            class="mx-auto" width="80">
+                        <h5 class="text-secondary fw-bold">Cerai Mati</h5>
+                        <p class="text-danger fs-4 fw-bold"><span data-purecounter-start="0"
+                                data-purecounter-end="{{ $ceraiMati }}" data-purecounter-duration="1"
+                                class="purecounter"></span></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center p-3">
+                        <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-cerai-hidup-c75sVKpW.svg"
+                            class="mx-auto" width="80">
+                        <h5 class="text-secondary fw-bold">Cerai Hidup</h5>
+                        <p class="text-danger fs-4 fw-bold"><span data-purecounter-start="0"
+                                data-purecounter-end="{{ $ceraiHidup }}" data-purecounter-duration="1"
+                                class="purecounter"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- agama  -->
+    <section class="stats section light-background">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <h2 class="fw-bold mb-4">Berdasarkan Agama</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card p-3 d-flex flex-row align-items-center">
+                        <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-islam-CvTs3lrK.svg"
+                            width="75" height="100" style="object-fit: contain; margin-right: 15px;">
+                        <div>
+                            <h3 class="text-secondary fw-bold mb-0">Islam</h3>
+                            <p class="text-danger fs-4 fw-bold mb-0"><span data-purecounter-start="0"
+                                    data-purecounter-end="{{ $islam }}" data-purecounter-duration="1"
+                                    class="purecounter"></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-3 d-flex flex-row align-items-center">
+                        <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-kristen-DnmWrutu.svg"
+                            width="75" height="100" style="object-fit: contain; margin-right: 15px;">
+                        <div>
+                            <h3 class="text-secondary fw-bold mb-0">Kristen</h3>
+                            <p class="text-danger fs-4 fw-bold mb-0"><span data-purecounter-start="0"
+                                    data-purecounter-end="{{ $kristen }}" data-purecounter-duration="1"
+                                    class="purecounter"></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-3 d-flex flex-row align-items-center">
+                        <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-katolik-Bh6D2yYr.svg"
+                            width="75" height="100" style="object-fit: contain; margin-right: 15px;">
+                        <div>
+                            <h3 class="text-secondary fw-bold mb-0">Katolik</h3>
+                            <p class="text-danger fs-4 fw-bold mb-0"><span data-purecounter-start="0"
+                                    data-purecounter-end="{{ $katolik }}" data-purecounter-duration="1"
+                                    class="purecounter"></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-3 d-flex flex-row align-items-center">
+                        <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-hindu-O6CRjU7v.svg"
+                            width="75" height="100" style="object-fit: contain; margin-right: 15px;">
+                        <div>
+                            <h3 class="text-secondary fw-bold mb-0">Hindu</h3>
+                            <p class="text-danger fs-4 fw-bold mb-0"><span data-purecounter-start="0"
+                                    data-purecounter-end="{{ $hindu }}" data-purecounter-duration="1"
+                                    class="purecounter"></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-3 d-flex flex-row align-items-center">
+                        <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-buddha-4LzubUEG.svg"
+                            width="75" height="100" style="object-fit: contain; margin-right: 15px;">
+                        <div>
+                            <h3 class="text-secondary fw-bold mb-0">Buddha</h3>
+                            <p class="text-danger fs-4 fw-bold mb-0"><span data-purecounter-start="0"
+                                    data-purecounter-end="{{ $buddha }}" data-purecounter-duration="1"
+                                    class="purecounter"></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-3 d-flex flex-row align-items-center">
+                        <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-konghuchu-S2zKN_1w.svg"
+                            width="75" height="100" style="object-fit: contain; margin-right: 15px;">
+                        <div>
+                            <h3 class="text-secondary fw-bold mb-0">Konghucu</h3>
+                            <p class="text-danger fs-4 fw-bold mb-0"><span data-purecounter-start="0"
+                                    data-purecounter-end="{{ $konghucu }}" data-purecounter-duration="1"
+                                    class="purecounter"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact section">
@@ -718,13 +484,13 @@
                         <div class="row gy-4">
 
                             <div class="col-md-6">
-                                <input type="text" name="name" class="form-control"
-                                    placeholder="Your Name" required="">
+                                <input type="text" name="name" class="form-control" placeholder="Your Name"
+                                    required="">
                             </div>
 
                             <div class="col-md-6 ">
-                                <input type="email" class="form-control" name="email"
-                                    placeholder="Your Email" required="">
+                                <input type="email" class="form-control" name="email" placeholder="Your Email"
+                                    required="">
                             </div>
 
                             <div class="col-md-12">
@@ -753,5 +519,4 @@
         </div>
 
     </section><!-- /Contact Section -->
-
-</main>
+@endsection

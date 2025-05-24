@@ -1068,6 +1068,58 @@ section,
   color: var(--contrast-color);
 }
 
+.about .icon-box {
+  position: relative;
+  z-index: 1;
+  padding: 30px;
+  border-radius: 15px;
+  background: #fff; /* atau sesuaikan dengan background konten */
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+/* Border animasi berputar */
+.about .icon-box::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #00b7ff, white, #ff30ff);
+  z-index: -1;
+  border-radius: 18px;
+  background-size: 400% 400%;
+  animation: rotateGradient 10s linear infinite;
+}
+
+/* Lapisan putih untuk konten */
+.about .icon-box::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  background: #fff; /* warna konten dalam */
+  z-index: -1;
+  border-radius: 12px;
+}
+
+@keyframes rotateGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
 .about .icon-boxes .col-md-6:nth-child(2) .icon-box,
 .about .icon-boxes .col-md-6:nth-child(4) .icon-box {
   margin-top: -40px;
@@ -1667,6 +1719,61 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-/* .starter-section { */
-  /* Add your styles here */
-/* } */
+/* berita */
+
+.berita {
+  padding-top: 100px;}
+.card {
+    transition: all 0.3s ease-in-out;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.card-text {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.badge {
+    font-size: 0.75rem;
+    padding: 0.4em 0.7em;
+    background-color: #6c63ff !important;
+    cursor: default;
+}
+
+.text-muted {
+    font-size: 0.8rem;
+}
+
+.berita h2 {
+    border-left: 5px solid #6c63ff;
+    padding-left: 10px;
+}
+
+@media (max-width: 768px) {
+    .card-img-top {
+        height: 160px;
+    }
+}
+/* end berita */

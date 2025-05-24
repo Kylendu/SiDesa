@@ -3,13 +3,13 @@
 
         <a href="index.html" class="logo d-flex align-items-center">
             <!-- Uncomment the line below if you also wish to use an image logo -->
-            <img src="{{ asset('Bootslander/assets/img/logo.png')}}" alt="" class="floating">
+            <img src="{{ asset('Bootslander/assets/img/logo.png') }}" alt="" class="floating">
             <h1 class="sitename">SiDesa</h1>
         </a>
 
         <nav id="navmenu" class="navmenu">
             <ul>
-                <li><a href="#hero" class="active">Home</a></li>
+                <li><a href="#hero">Home</a></li>
                 <li><a href="#profilDesa">Profil Desa</a></li>
                 <li><a href="#features">Infografis</a></li>
                 <li><a href="#listing">Listing</a></li>
@@ -17,7 +17,7 @@
                 <li class="dropdown"><a href="#"><span>Informasi</span> <i
                             class="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
-                        <li><a href="#">Berita</a></li>
+                        <li><a href="{{ route('berita') }}">Berita</a></li>
                         <li><a href="#">Pengaduan</a></li>
                         <li><a href="#">PPID</a></li>
                         <li><a href="#">Dropdown 4</a></li>
