@@ -637,37 +637,6 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Scroll Top Button
---------------------------------------------------------------*/
-.scroll-top {
-  position: fixed;
-  visibility: hidden;
-  opacity: 0;
-  right: 15px;
-  bottom: 15px;
-  z-index: 99999;
-  background-color: var(--accent-color);
-  width: 40px;
-  height: 40px;
-  border-radius: 4px;
-  transition: all 0.4s;
-}
-
-.scroll-top i {
-  font-size: 24px;
-  color: var(--contrast-color);
-  line-height: 0;
-}
-
-.scroll-top:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
-  color: var(--contrast-color);
-}
-
-.scroll-top.active {
-  visibility: visible;
-  opacity: 1;
-}
 
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
@@ -1777,3 +1746,47 @@ section,
     }
 }
 /* end berita */
+
+/* pengaduan */
+.floating-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 999;
+}
+
+.aduan-button {
+  background-color: #ff8d9e;
+  color: white;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: background 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.aduan-button:hover {
+  background-color: #fc4b4b;
+  color: white;
+}
+
+#scroll-top {
+  width: 40px;
+  height: 40px;
+  background-color: #2fc79e;
+  color: white;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s;
+}
+
+#scroll-top:hover {
+  background-color: #28b18d;
+}

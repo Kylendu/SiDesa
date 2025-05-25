@@ -14,6 +14,6 @@ Route::get('/coba', function () {
 // });
 Route::post('/ajaxupload', [ServiceDocumentController::class, 'upload']);
 
-Route::get('/', [ResidentController::class, 'count']);
+Route::get('/', [ResidentController::class, 'count'])->name('home');
 Route::post('/pengaduan/store', [InformationController::class, 'storePengaduan'])->name('pengaduan.store');
 Route::get('/berita', [InformationController::class, 'berita'])->name('berita');

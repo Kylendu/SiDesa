@@ -49,7 +49,7 @@
     </section><!-- /Hero Section -->
 
     <!-- about Section -->
-    <section id="about" class="profilDesa about section">
+    <section id="profilDesa" class="profilDesa about section">
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="row align-items-xl-center gy-5">
                 <div class="col-xl-5 content">

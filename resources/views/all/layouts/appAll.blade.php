@@ -22,7 +22,8 @@
 
     <!-- Vendor CSS Files -->
     <link href="{{ asset('Bootslander/assets/css/all.css') }}" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="{{ asset('Bootslander/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('Bootslander/assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
     <link href="{{ asset('Bootslander/assets/vendor/aos/aos.css') }}" rel="stylesheet">
@@ -31,6 +32,8 @@
 
     <!-- Main CSS File -->
     <link href="{{ asset('Bootslander/assets/css/main.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
 
     <!-- =======================================================
   * Template Name: Bootslander
@@ -66,6 +69,7 @@
             <i class="bi bi-arrow-up-short"></i>
         </a>
     </div>
+
     <!-- End Container Tombol -->
 
     <!-- Modal Form Pengaduan -->
@@ -99,8 +103,59 @@
             showCursor: true,
             cursorChar: '|',
         };
-    
+
         var typed = new Typed("#typed", options);
+
+        // modal pengaduan
+
+        $('#formPengaduan').submit(function(e) {
+            e.preventDefault();
+
+            let formData = new FormData();
+            formData.append('_token', '{{ csrf_token() }}');
+            formData.append('title', $('#title').val());
+            formData.append('content', $('#content').val());
+            formData.append('kategori', $('#kategori').val());
+            formData.append('author', $('#author').val());
+            formData.append('jenis', 'pengaduan');
+
+            if ($('#img')[0].files[0]) {
+                formData.append('img', $('#img')[0].files[0]);
+            }
+
+            $.ajax({
+                url: "{{ route('pengaduan.store') }}",
+                method: 'POST',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(response) {
+                    toastr.success('Pengaduan berhasil dikirim!');
+                    $('#formPengaduan')[0].reset();
+                    $('#aduanModal').modal('hide');
+                },
+                error: function(xhr) {
+                    toastr.error('Gagal mengirim pengaduan!');
+                }
+            });
+        });
+
+        document.getElementById('img').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            const preview = document.getElementById('preview-img');
+
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = '#';
+                preview.style.display = 'none';
+            }
+        });
     </script>
 </body>
 

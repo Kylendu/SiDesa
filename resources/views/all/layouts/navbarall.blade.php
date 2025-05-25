@@ -1,7 +1,7 @@
 <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-        <a href="index.html" class="logo d-flex align-items-center">
+        <a href="{{  route('home') }}" class="logo d-flex align-items-center">
             <!-- Uncomment the line below if you also wish to use an image logo -->
             <img src="{{ asset('Bootslander/assets/img/logo.png') }}" alt="" class="floating">
             <h1 class="sitename">SiDesa</h1>
@@ -11,7 +11,7 @@
             <ul>
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#profilDesa">Profil Desa</a></li>
-                <li><a href="#features">Infografis</a></li>
+                <li><a href="#infografis">Infografis</a></li>
                 <li><a href="#listing">Listing</a></li>
                 {{-- <li><a href="#team">Team</a></li> --}}
                 <li class="dropdown"><a href="#"><span>Informasi</span> <i

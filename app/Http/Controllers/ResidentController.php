@@ -32,7 +32,6 @@ class ResidentController extends Controller
             'headFamilies',
             'male',
             'female',
-            'ketikan',
             'belumKawin',
             'kawin',
             'ceraiMati',
