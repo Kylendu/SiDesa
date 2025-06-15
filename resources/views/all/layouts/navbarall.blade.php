@@ -9,7 +9,7 @@
 
         <nav id="navmenu" class="navmenu">
             <ul>
-                <li><a href="#hero">Home</a></li>
+                <li><a href="{{ route('home') }}" active>Home</a></li>
                 <li><a href="#profilDesa">Profil Desa</a></li>
                 <li><a href="#infografis">Infografis</a></li>
                 <li><a href="#listing">Listing</a></li>
@@ -20,7 +20,8 @@
                         <li><a href="{{ route('berita') }}">Berita</a></li>
                         <li><a href="#">Pengaduan</a></li>
                         <li><a href="#">PPID</a></li>
-                        <li><a href="#">Dropdown 4</a></li>
+                        <li><a href="{{ route('dokumen') }}">Dokumen</a></li>
+                        <li><a href="{{ route('pelatihan') }}">Pelatihan Desa</a></li>
                         <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i
                                     class="bi bi-chevron-down toggle-dropdown"></i></a>
                             <ul>
