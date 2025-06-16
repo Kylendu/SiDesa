@@ -45,7 +45,7 @@
                                     {{ Str::limit(strip_tags($item['keterangan']), 100) }}
                                 </p>
                             </div>
-                            <div class="card-footer bg-white border-0 d-flex justify-content-between">
+                            <div class="card-footer bg-white border-0 d-flex justify-content-between mb-3">
                                 <a href="{{ route('dokumen.download', $item['id']) }}"
                                     class="btn btn-outline-success btn-sm rounded-pill">
                                     <i class="bi bi-download me-1"></i>Unduh

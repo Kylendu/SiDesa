@@ -9,4 +9,8 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateVillageTraining extends CreateRecord
 {
     protected static string $resource = VillageTrainingResource::class;
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }

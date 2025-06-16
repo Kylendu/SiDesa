@@ -50,7 +50,7 @@
     <!-- End Header -->
 
     {{-- diisi content --}}
-    <main>
+    <main class="pt-5">
         @yield('content')
     </main>
     {{-- diisi content --}}

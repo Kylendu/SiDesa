@@ -10,7 +10,7 @@
             </p>
 
             <!-- Form Pencarian -->
-            <form action="{{ route('pelatihan') }}" method="GET" class="mb-4">
+            <form action="{{ route('pelatihan.search') }}" method="GET" class="mb-4">
                 <div class="input-group shadow-sm">
                     <input type="text" name="search" class="form-control" placeholder="Cari pelatihan..."
                         value="{{ request()->get('search') }}">

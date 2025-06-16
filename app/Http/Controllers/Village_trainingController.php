@@ -20,12 +20,10 @@ class Village_trainingController extends Controller
 
     public function search(Request $request)
     {
-        // Validate the search input
         $request->validate([
             'search' => 'required|string|max:255',
         ]);
 
-        // Search for village trainings based on the input
         $pelatihan = Village_training::where('title', 'like', '%' . $request->search . '%')
             ->orWhere('description', 'like', '%' . $request->search . '%')
             ->get();

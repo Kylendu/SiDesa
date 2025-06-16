@@ -9,4 +9,8 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateStrukturDesa extends CreateRecord
 {
     protected static string $resource = StrukturDesaResource::class;
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }
