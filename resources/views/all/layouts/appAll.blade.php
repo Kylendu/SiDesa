@@ -34,6 +34,9 @@
     <link href="{{ asset('Bootslander/assets/css/main.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
+    {{-- tailwind --}}
+    <script src="https://cdn.tailwindcss.com"></script>
+
 
     <!-- =======================================================
   * Template Name: Bootslander
@@ -50,7 +53,7 @@
     <!-- End Header -->
 
     {{-- diisi content --}}
-    <main class="pt-5">
+    <main class="{{ !Request::is('home') && !Request::is('/') ? 'mt-5' : '' }}">
         @yield('content')
     </main>
     {{-- diisi content --}}
@@ -156,7 +159,78 @@
                 preview.style.display = 'none';
             }
         });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const carouselTrack = document.querySelector('.carousel-track');
+            const initialCards = Array.from(carouselTrack.children);
+
+            // Perhitungan lebar kartu dan gap.
+            // Pastikan ini sesuai dengan nilai di CSS dan Tailwind.
+            // Tailwind max-w-xs adalah 20rem (320px)
+            // Tailwind gap-3 adalah 0.75rem (12px)
+            const cardWidth = 320; // max-w-xs = 320px
+            const gapWidth = 12; // gap-3 = 12px
+
+            // Duplikasi kartu dua kali untuk memastikan loop mulus
+            initialCards.forEach(card => {
+                const clone = card.cloneNode(true);
+                carouselTrack.appendChild(clone);
+            });
+            initialCards.forEach(card => {
+                const clone = card.cloneNode(true);
+                carouselTrack.appendChild(clone);
+            });
+
+            const totalOriginalWidth = (cardWidth + gapWidth) * initialCards.length;
+
+            let currentPosition = 0;
+            let currentScrollSpeed;
+
+            const normalSpeed = 1.0; // Kecepatan default
+            const hoverSpeed = 0.5; // Kecepatan saat mouse hover (lebih lambat)
+
+            currentScrollSpeed = normalSpeed;
+
+            let animationFrameId;
+
+            function animateScroll() {
+                currentPosition -= currentScrollSpeed;
+
+                if (Math.abs(currentPosition) >= totalOriginalWidth) {
+                    currentPosition = 0; // Reset posisi ke awal
+                }
+
+                carouselTrack.style.transform = `translateX(${currentPosition}px)`;
+                animationFrameId = requestAnimationFrame(animateScroll);
+            }
+
+            function startScroll() {
+                if (!animationFrameId) {
+                    animateScroll();
+                }
+            }
+
+            function stopScroll() {
+                if (animationFrameId) {
+                    cancelAnimationFrame(animationFrameId);
+                    animationFrameId = null;
+                }
+            }
+
+            // Mulai animasi pertama kali
+            startScroll();
+
+            // Event Listener untuk mengatur kecepatan saat mouse hover pada carousel-wrapper
+            document.querySelector('.carousel-wrapper').addEventListener('mouseenter', () => {
+                currentScrollSpeed = hoverSpeed; // Ubah kecepatan menjadi lebih lambat
+            });
+
+            document.querySelector('.carousel-wrapper').addEventListener('mouseleave', () => {
+                currentScrollSpeed = normalSpeed; // Kembalikan kecepatan ke normal
+            });
+        });
     </script>
+
 </body>
 
 </html>

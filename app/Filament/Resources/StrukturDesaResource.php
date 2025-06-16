@@ -2,12 +2,14 @@
 
 namespace App\Filament\Resources;
 
+use FFI;
 use Filament\Forms;
 use Filament\Tables;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use App\Models\Struktur_desa;
 use Filament\Resources\Resource;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
@@ -17,7 +19,6 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\StrukturDesaResource\Pages;
 use App\Filament\Resources\StrukturDesaResource\RelationManagers;
-use FFI;
 
 class StrukturDesaResource extends Resource
 {
@@ -34,8 +35,19 @@ class StrukturDesaResource extends Resource
             TextInput::make('nama')
                 ->label('Nama')
                 ->required(),
-            TextInput::make('jabatan')
+            Select::make('jabatan')
                 ->label('Jabatan')
+                ->options([
+                    'Kepala Desa' => 'Kepala Desa',
+                    'Sekretaris Desa' => 'Sekretaris Desa',
+                    'Kaur Keuangan' => 'Kaur Keuangan',
+                    'Kaur Umum' => 'Kaur Umum',
+                    'Kaur Perencanaan' => 'Kaur Perencanaan',
+                    'Kasi Pelayanan' => 'Kasi Pelayanan',
+                    'Kasi Pemerintahan' => 'Kasi Pemerintahan',
+                    'Kasi Kesejahteraan' => 'Kasi Kesejahteraan',
+                    'BPD' => 'BPD',
+                ])
                 ->required(),
             FileUpload::make('foto')
                 ->label('Foto')

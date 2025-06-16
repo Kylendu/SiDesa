@@ -3,7 +3,6 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
         <img src="{{ asset('Bootslander/assets/img/hero-bg-2.jpg') }}" alt="" class="hero-bg">
-
         <div class="container">
             <div class="row gy-4 justify-content-between">
                 <div class="col-lg-4 order-lg-last hero-img" data-aos="zoom-out" data-aos-delay="100">
@@ -18,12 +17,6 @@
                         dan Sejahtera dengan <span>SiDesa</span>
                     </h1>
                     <p>SiDesa – Kemudahan Akses Informasi dan Layanan Publik dalam Genggaman!</p>
-                    {{-- <div class="d-flex">
-                            <a href="#ProfilDesa" class="btn-get-started">Get Started</a>
-                            <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8"
-                                class="glightbox btn-watch-video d-flex align-items-center"><i
-                                    class="bi bi-play-circle"></i><span>Watch Video</span></a>
-                        </div> --}}
                 </div>
 
             </div>
@@ -45,21 +38,19 @@
                 <use xlink:href="#wave-path" x="50" y="9"></use>
             </g>
         </svg>
-
-    </section><!-- /Hero Section -->
+    </section>
+    <!-- /Hero Section -->
 
     <!-- about Section -->
     <section id="profilDesa" class="profilDesa about section">
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="row align-items-xl-center gy-5">
-                <div class="col-xl-5 content">
-                    {{-- <img src="{{ url('public.images.Roket.jpg') }}" alt=""> --}}
-                    <h2>sidesaku</h2>
-                    <h2>Jelajahi SiDesaKu</h2>
-                    <p class="fw-bold">Melalui website ini Anda dapat menjelajahi segala hal yang
-                        terkait dengan Desa. Aspek pemerintahan, penduduk, demografi, potensi Desa,
-                        dan juga berita tentang Desa.</p>
-                    <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                <div class="col-xl-5 text-xl fw-bold">
+                    <h3>Jelajahi SiDesaKu</h2>
+                        <p class="fw-bold py-3">Melalui website ini Anda dapat menjelajahi segala hal yang
+                            terkait dengan Desa. Aspek pemerintahan, penduduk, demografi, potensi Desa,
+                            dan juga berita tentang Desa.</p>
+                        <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
                 </div>
 
                 <div class="col-xl-7">
@@ -91,7 +82,6 @@
                                 <h3>PPID</h3>
                             </div>
                         </div> <!-- End Icon Box -->
-
                     </div>
                 </div>
             </div>
@@ -103,6 +93,7 @@
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="container p-5">
+                <div class="text-center text-4xl fw-bold"><span>Visi & Misi</span></div>
                 <div class="row justify-content-center">
                     <div class="col-md-10">
                         <!-- Visi -->
@@ -127,41 +118,64 @@
                 </div>
             </div>
         </div>
-        </div>
 
         <!-- penjelasan profildesa -->
         <section id="ProfilDesa" class="ProfilDesa section light-background">
-            <div class="container ">
-                <h2 class="fw-bold">Bagan Desa</h2>
-                <div class="row">
-                    <!-- Struktur Organisasi Pemerintahan Desa -->
-                    <div class="col-md-6 mb-4">
-                        <h5 class="profil-title text-center fw-bold">Struktur Organisasi Pemerintahan Desa</h5>
-                        <div class="bg-white p-3 rounded shadow">
-                            <img src="{{ asset('Bootslander/assets/img/StrukturOrganisasiDesa.png') }}"
-                                class="img-fluid w-100" alt="Struktur Pemerintahan Desa">
-                        </div>
-                    </div>
-
-                    <!-- Struktur Organisasi BPD -->
-                    <div class="col-md-6 mb-4">
-                        <h5 class="profil-title text-center fw-bold">Struktur Organisasi Badan Permusyawaratan Desa</h5>
-                        <div class="bg-white p-3 rounded shadow">
-                            <img src="{{ asset('Bootslander/assets/img/bpd.png') }}" class="img-fluid w-100"
-                                alt="Struktur BPD">
-                        </div>
+            <div class="container">
+                <h2 class="profil-title text-4xl text-center mb-4">Struktur Organisasi Pemerintahan Desa</h2>
+                <p class="text-center text-gray-600 mb-8">Berikut adalah jajaran pemimpin dan staf yang menggerakkan roda
+                    pemerintahan serta pembangunan di desa kami.</p>
+                <div class="carousel-wrapper">
+                    <div class="carousel-track">
+                        @forelse ($struktur as $item)
+                            <div class="carousel-card-item max-w-xs rounded-2xl overflow-hidden shadow-lg bg-white">
+                                <div class="relative">
+                                    <img class="w-full h-52 object-cover"
+                                        src="{{ Storage::url($item['foto']) ?? $item['foto'] }}" alt="Foto Profil">
+                                    <span
+                                        class="absolute top-2 right-2 bg-purple-600 text-white text-xs px-3 py-1 rounded-full flex items-center gap-1 shadow-md z-10">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.518 4.674a1 1 0 00.95.69h4.916c.969 0 1.371 1.24.588 1.81l-3.977 2.89a1 1 0 00-.364 1.118l1.518 4.674c.3.921-.755 1.688-1.54 1.118l-3.977-2.89a1 1 0 00-1.175 0l-3.977-2.89c-.784.57-1.838-.197-1.539-1.118l1.518-4.674a1 1 0 00-.364-1.118l-3.977-2.89c-.784-.57-.38-1.81.588-1.81h4.916a1 1 0 00.95-.69l1.518-4.674z" />
+                                        </svg> Pimpinan
+                                    </span>
+                                </div>
+                                <div class="p-4">
+                                    <h3 class="text-lg font-semibold text-gray-800">{{ $item['nama'] }}</h3>
+                                    <p class="text-sm text-gray-500 mb-4">{{ $item['jabatan'] }}</p>
+                                    <hr class="my-3 border-gray-200">
+                                    <div class="flex justify-between items-center text-sm text-gray-500 mt-2">
+                                        <div class="flex items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M8 7V3m8 4V3M3 11h18M5 19h14a2 2 0 002-2v-5H3v5a2 2 0 002 2z" />
+                                            </svg> Aktif
+                                        </div>
+                                        <div class="flex gap-1">
+                                            <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                                            <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                                            <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @empty
+                            <div>
+                                <p class="text-gray-500">Tidak ada data pelatihan yang tersedia.</p>
+                            </div>
+                        @endforelse
                     </div>
                 </div>
             </div>
-
-            <!-- peta lokasi pada profil desa -->
         </section>
 
         <!-- peta lokasi -->
         <section id="listing" class="listing section p-0">
             <div class="container my-5">
-                <h1 class="fw-bold">Peta Lokasi Desa</h1>
-                <p>Menampilkan Peta Desa Dengan Interest Point Desa</p>
+                <h1 class="fw-bold text-4xl mb-4">Peta Lokasi Desa</h1>
+                <p class="mb-2">Menampilkan Peta Desa Dengan Interest Point Desa</p>
                 <div class="row g-4">
                     <!-- Informasi Desa -->
                     <div class="col-md-6">
@@ -216,11 +230,9 @@
 
     <!-- Features Section -->
     <section id="infografis" class="features section">
-
         <div class="container">
             <div>
-                <h1 class="fw-bold">Infografis
-                    siDesa</h1>
+                <h1 class="fw-bold text-4xl">Infografis SiDesa</h1>
             </div>
             <div class="row gy-4  align-items-center">
                 <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
@@ -236,11 +248,7 @@
                     </p>
                 </div>
             </div>
-
         </div>
-
-        </div>
-
     </section><!-- /Features Section -->
 
     <!-- Stats Section -->
@@ -248,7 +256,7 @@
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="row mb-4">
                 <div class="col-12">
-                    <h2 class="fw-bold">Jumlah Penduduk dan Kepala Keluarga</h2>
+                    <h2 class="fw-bold text-4xl">Jumlah Penduduk dan Kepala Keluarga</h2>
                 </div>
             </div>
             <div class="row g-4">
@@ -311,7 +319,7 @@
     <!-- stts kawin  -->
     <section class="stats section light-background">
         <div class="container" data-aos="fade-up" data-aos-delay="100">
-            <h2 class="fw-bold mb-4">Berdasarkan Perkawinan</h2>
+            <h2 class="fw-bold mb-4 text-4xl">Berdasarkan Perkawinan</h2>
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="card text-center p-3">
@@ -360,77 +368,89 @@
     <!-- agama  -->
     <section class="stats section light-background">
         <div class="container" data-aos="fade-up" data-aos-delay="100">
-            <h2 class="fw-bold mb-4">Berdasarkan Agama</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card p-3 d-flex flex-row align-items-center">
-                        <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-islam-CvTs3lrK.svg"
-                            width="75" height="100" style="object-fit: contain; margin-right: 15px;">
-                        <div>
-                            <h3 class="text-secondary fw-bold mb-0">Islam</h3>
-                            <p class="text-danger fs-4 fw-bold mb-0"><span data-purecounter-start="0"
-                                    data-purecounter-end="{{ $islam }}" data-purecounter-duration="1"
-                                    class="purecounter"></span></p>
+            <h2 class="fw-bold mb-4 text-4xl">Berdasarkan Agama</h2>
+            <div class="row g-4 align-items-stretch">
+                <div class="col-md-4 col-sm-6 col-12 mb-4">
+                    <div class="card p-3 d-flex flex-column h-100 justify-content-between">
+                        <div class="d-flex align-items-center">
+                            <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-islam-CvTs3lrK.svg"
+                                width="75" height="100" style="object-fit: contain; margin-right: 15px;">
+                            <div>
+                                <h3 class="text-secondary fw-bold mb-0">Islam</h3>
+                                <p class="text-danger fs-4 fw-bold mb-0"><span data-purecounter-start="0"
+                                        data-purecounter-end="{{ $islam }}" data-purecounter-duration="1"
+                                        class="purecounter"></span></p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card p-3 d-flex flex-row align-items-center">
-                        <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-kristen-DnmWrutu.svg"
-                            width="75" height="100" style="object-fit: contain; margin-right: 15px;">
-                        <div>
-                            <h3 class="text-secondary fw-bold mb-0">Kristen</h3>
-                            <p class="text-danger fs-4 fw-bold mb-0"><span data-purecounter-start="0"
-                                    data-purecounter-end="{{ $kristen }}" data-purecounter-duration="1"
-                                    class="purecounter"></span></p>
+                <div class="col-md-4 col-sm-6 col-12 mb-4">
+                    <div class="card p-3 d-flex flex-column h-100 justify-content-between">
+                        <div class="d-flex align-items-center">
+                            <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-kristen-DnmWrutu.svg"
+                                width="75" height="100" style="object-fit: contain; margin-right: 15px;">
+                            <div>
+                                <h3 class="text-secondary fw-bold mb-0">Kristen</h3>
+                                <p class="text-danger fs-4 fw-bold mb-0"><span data-purecounter-start="0"
+                                        data-purecounter-end="{{ $kristen }}" data-purecounter-duration="1"
+                                        class="purecounter"></span></p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card p-3 d-flex flex-row align-items-center">
-                        <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-katolik-Bh6D2yYr.svg"
-                            width="75" height="100" style="object-fit: contain; margin-right: 15px;">
-                        <div>
-                            <h3 class="text-secondary fw-bold mb-0">Katolik</h3>
-                            <p class="text-danger fs-4 fw-bold mb-0"><span data-purecounter-start="0"
-                                    data-purecounter-end="{{ $katolik }}" data-purecounter-duration="1"
-                                    class="purecounter"></span></p>
+                <div class="col-md-4 col-sm-6 col-12 mb-4">
+                    <div class="card p-3 d-flex flex-column h-100 justify-content-between">
+                        <div class="d-flex align-items-center">
+                            <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-katolik-Bh6D2yYr.svg"
+                                width="75" height="100" style="object-fit: contain; margin-right: 15px;">
+                            <div>
+                                <h3 class="text-secondary fw-bold mb-0">Katolik</h3>
+                                <p class="text-danger fs-4 fw-bold mb-0"><span data-purecounter-start="0"
+                                        data-purecounter-end="{{ $katolik }}" data-purecounter-duration="1"
+                                        class="purecounter"></span></p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card p-3 d-flex flex-row align-items-center">
-                        <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-hindu-O6CRjU7v.svg"
-                            width="75" height="100" style="object-fit: contain; margin-right: 15px;">
-                        <div>
-                            <h3 class="text-secondary fw-bold mb-0">Hindu</h3>
-                            <p class="text-danger fs-4 fw-bold mb-0"><span data-purecounter-start="0"
-                                    data-purecounter-end="{{ $hindu }}" data-purecounter-duration="1"
-                                    class="purecounter"></span></p>
+                <div class="col-md-4 col-sm-6 col-12 mb-4">
+                    <div class="card p-3 d-flex flex-column h-100 justify-content-between">
+                        <div class="d-flex align-items-center">
+                            <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-hindu-O6CRjU7v.svg"
+                                width="75" height="100" style="object-fit: contain; margin-right: 15px;">
+                            <div>
+                                <h3 class="text-secondary fw-bold mb-0">Hindu</h3>
+                                <p class="text-danger fs-4 fw-bold mb-0"><span data-purecounter-start="0"
+                                        data-purecounter-end="{{ $hindu }}" data-purecounter-duration="1"
+                                        class="purecounter"></span></p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card p-3 d-flex flex-row align-items-center">
-                        <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-buddha-4LzubUEG.svg"
-                            width="75" height="100" style="object-fit: contain; margin-right: 15px;">
-                        <div>
-                            <h3 class="text-secondary fw-bold mb-0">Buddha</h3>
-                            <p class="text-danger fs-4 fw-bold mb-0"><span data-purecounter-start="0"
-                                    data-purecounter-end="{{ $buddha }}" data-purecounter-duration="1"
-                                    class="purecounter"></span></p>
+                <div class="col-md-4 col-sm-6 col-12 mb-4">
+                    <div class="card p-3 d-flex flex-column h-100 justify-content-between">
+                        <div class="d-flex align-items-center">
+                            <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-buddha-4LzubUEG.svg"
+                                width="75" height="100" style="object-fit: contain; margin-right: 15px;">
+                            <div>
+                                <h3 class="text-secondary fw-bold mb-0">Buddha</h3>
+                                <p class="text-danger fs-4 fw-bold mb-0"><span data-purecounter-start="0"
+                                        data-purecounter-end="{{ $buddha }}" data-purecounter-duration="1"
+                                        class="purecounter"></span></p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card p-3 d-flex flex-row align-items-center">
-                        <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-konghuchu-S2zKN_1w.svg"
-                            width="75" height="100" style="object-fit: contain; margin-right: 15px;">
-                        <div>
-                            <h3 class="text-secondary fw-bold mb-0">Konghucu</h3>
-                            <p class="text-danger fs-4 fw-bold mb-0"><span data-purecounter-start="0"
-                                    data-purecounter-end="{{ $konghucu }}" data-purecounter-duration="1"
-                                    class="purecounter"></span></p>
+                <div class="col-md-4 col-sm-6 col-12 mb-4">
+                    <div class="card p-3 d-flex flex-column h-100 justify-content-between">
+                        <div class="d-flex align-items-center">
+                            <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-konghuchu-S2zKN_1w.svg"
+                                width="75" height="100" style="object-fit: contain; margin-right: 15px;">
+                            <div>
+                                <h3 class="text-secondary fw-bold mb-0">Konghucu</h3>
+                                <p class="text-danger fs-4 fw-bold mb-0"><span data-purecounter-start="0"
+                                        data-purecounter-end="{{ $konghucu }}" data-purecounter-duration="1"
+                                        class="purecounter"></span></p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -448,9 +468,7 @@
         </div><!-- End Section Title -->
 
         <div class="container" data-aos="fade" data-aos-delay="100">
-
             <div class="row gy-4">
-
                 <div class="col-lg-4">
                     <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
                         <i class="bi bi-geo-alt flex-shrink-0"></i>
@@ -475,7 +493,6 @@
                             <p>info@example.com</p>
                         </div>
                     </div><!-- End Info Item -->
-
                 </div>
 
                 <div class="col-lg-8">
@@ -509,14 +526,10 @@
 
                                 <button type="submit">Send Message</button>
                             </div>
-
                         </div>
                     </form>
                 </div><!-- End Contact Form -->
-
             </div>
-
         </div>
-
     </section><!-- /Contact Section -->
 @endsection
