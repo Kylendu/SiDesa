@@ -11,15 +11,19 @@
         <nav id="navmenu" class="navmenu">
             <ul>
                 <li><a href="{{ route('home') }}" class="active">Home</a></li>
-                <li><a href="#profilDesa">Profil Desa</a></li>
-                <li><a href="#listing">Listing</a></li>
-                <li><a href="#infografis">Infografis</a></li>
+                <li><a href="{{ !Request::is('home') && !Request::is('/') ? route('home') : '#profilDesa' }}">Profil
+                        Desa</a></li>
+                <li><a href="{{ !Request::is('home') && !Request::is('/') ? route('home') : '#listing' }}">Listing</a>
+                </li>
+                <li><a
+                        href="{{ !Request::is('home') && !Request::is('/') ? route('home') : '#infografis' }}">Infografis</a>
+                </li>
                 {{-- <li><a href="#team">Team</a></li> --}}
                 <li class="dropdown"><a href="#"><span>Informasi</span> <i
                             class="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
                         <li><a href="{{ route('berita') }}">Berita</a></li>
-                        <li><a href="{{ route('ppid')  }}">PPID</a></li>
+                        <li><a href="{{ route('ppid') }}">PPID</a></li>
                         <li><a href="{{ route('dokumen') }}">Dokumen</a></li>
                         <li><a href="{{ route('pelatihan') }}">Pelatihan Desa</a></li>
                         <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i
@@ -34,6 +38,7 @@
                         </li>
                     </ul>
                 </li>
+                <li><a href="{{  route('inventory') }}">Inventaris</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>

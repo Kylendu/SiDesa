@@ -26,4 +26,5 @@ Route::get('/ppid', function () {
     return view('all.pages.ppid');
 })->name('ppid');
 
+Route::get('/inventories', [\App\Http\Controllers\InventoryController::class, 'index'])->name('inventory');
 
