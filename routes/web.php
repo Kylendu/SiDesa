@@ -14,9 +14,13 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::post('/pengaduan/store', [InformationController::class, 'storePengaduan'])->name('pengaduan.store');
 Route::get('/berita', [InformationController::class, 'berita'])->name('berita');
+Route::get('/berita/{id}', [InformationController::class, 'showBerita'])->name('berita.show');
+
 
 Route::get('/pelatihan', [Village_trainingController::class, 'index'])->name('pelatihan');
 Route::get('/pelatihan/search', [Village_trainingController::class, 'search'])->name('pelatihan.search');
+Route::get('/pelatihan/{id}', [Village_trainingController::class, 'show'])->name('pelatihan.show');
+
 
 Route::get('/layananDokumen', [ServiceDocumentController::class, 'index'])->name('dokumen');
 Route::get('/layananDokumen/download/{id}', [ServiceDocumentController::class, 'download'])->name('dokumen.download');

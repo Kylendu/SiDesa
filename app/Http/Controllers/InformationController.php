@@ -31,12 +31,20 @@ class InformationController extends Controller
             'img' => $imgPath,
         ]);
 
+
         return response()->json(['message' => 'Pengaduan berhasil disimpan.']);
     }
 
-    public function berita() {
+    public function berita()
+    {
         $berita = Information::where('jenis', 'berita')->get();
+
         return view('all.pages.berita', compact('berita'));
     }
 
+    public function showBerita($id)
+    {
+        $berita = Information::where('jenis', 'berita')->findOrFail($id);
+        return view('all.pages.berita-detail', compact('berita'));
+    }
 }

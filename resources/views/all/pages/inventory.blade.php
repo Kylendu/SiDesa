@@ -3,8 +3,8 @@
 @section('content')
     <section id="inventory" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center fw-bold mb-4">Daftar Inventaris Desa</h2>
-            <p class="text-center text-muted mb-5">Berikut adalah daftar inventaris barang milik desa yang tercatat.</p>
+            <h2 class="text-center fw-bold mb-2 fs-2">Daftar Inventaris Desa</h2>
+            <p class="text-center text-muted mb-5 fs-5">Berikut adalah daftar inventaris barang milik desa yang tercatat.</p>
 
             <div class="row g-4">
                 @forelse ($inventory as $item)

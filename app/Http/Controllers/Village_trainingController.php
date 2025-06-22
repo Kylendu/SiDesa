@@ -7,7 +7,7 @@ use App\Models\Village_training;
 use Illuminate\Support\Facades\Storage;
 
 
- // Assuming you have a model named Village_training
+// Assuming you have a model named Village_training
 
 class Village_trainingController extends Controller
 {
@@ -29,5 +29,10 @@ class Village_trainingController extends Controller
             ->get();
 
         return view('all.pages.pelatihan', compact('pelatihan'));
+    }
+    public function show($id)
+    {
+        $pelatihan = Village_training::findOrFail($id);
+        return view('all.pages.pelatihan-detail', compact('pelatihan'));
     }
 }
