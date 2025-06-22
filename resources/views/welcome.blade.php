@@ -121,7 +121,7 @@
                                     viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M8 7V3m8 4V3M3 11h18M5 19h14a2 2 0 002-2v-5H3v5a2 2 0 002 2z" />
-                                </svg> Aktif
+                                </svg> halo ini testing
                             </div>
                             <div class="flex gap-1">
                                 <span class="w-2 h-2 rounded-full bg-green-500"></span>
