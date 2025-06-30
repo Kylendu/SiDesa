@@ -10,7 +10,10 @@ class Peminjaman extends Model
     use HasFactory;
 
     protected $table = 'peminjamen'; // sudah sesuai dengan migration
-
+    public function inventory()
+    {
+        return $this->belongsTo(Inventory::class, 'barang_id');
+    }
     protected $fillable = [
         'barang_id',
         'user_id',
@@ -33,5 +36,7 @@ class Peminjaman extends Model
     {
         return $this->belongsTo(Inventory::class, 'barang_id');
     }
+    
+    
     
 }

@@ -42,7 +42,8 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::middleware('auth')->group(function () {
     Route::post('/peminjaman', [PeminjamanController::class, 'store'])->name('peminjaman.store');
     Route::get('/profil', [PeminjamanController::class, 'profil'])->name('profil');
-    Route::get('/peminjaman/{id}/download', [PeminjamanController::class, 'download'])->name('peminjaman.download');
+    Route::get('/peminjaman/{id}/download', [PeminjamanController::class, 'download'])
+    ->name('peminjaman.download');
 });
 
 Route::get('/peminjaman/acc/{id}', [PeminjamanController::class, 'acc'])->name('peminjaman.acc');

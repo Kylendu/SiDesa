@@ -50,25 +50,27 @@ class PeminjamanController extends Controller
 
     public function profil()
     {
-        $peminjaman = Peminjaman::with('barang')
-            ->where('user_id', Auth::id())
-            ->latest()
-            ->get();
+        $peminjaman = Peminjaman::with('inventory')->where('user_id', Auth::id())->get();
+
 
         return view('all.pages.profil', compact('peminjaman'));
     }
 
-    public function download($id)
-    {
-        $peminjaman = Peminjaman::with('barang')
-            ->where('user_id', Auth::id())
-            ->findOrFail($id);
+public function download($id)
+{
+    $peminjaman = Peminjaman::with('barang')
+        ->where('id', $id)
+        ->where('user_id', Auth::id())
+        ->firstOrFail();
 
-        if ($peminjaman->status !== 'disetujui') {
-            return back()->with('error', 'Peminjaman belum disetujui.');
-        }
-
-        $pdf = Pdf::loadView('pages.peminjaman_surat', compact('peminjaman'));
-        return $pdf->download('Surat-Peminjaman-' . $peminjaman->id . '.pdf');
+    if ($peminjaman->status !== 'disetujui') {
+        return back()->with('error', 'Peminjaman belum disetujui.');
     }
+
+    $pdf = \Barryvdh\DomPDF\Facade\Pdf::loadView('all.pages.peminjaman_surat', compact('peminjaman'));
+
+    return $pdf->download('Surat-Peminjaman-' . $peminjaman->id . '.pdf');
+}
+
+
 }
