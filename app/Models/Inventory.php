@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Storage;
 
 class Inventory extends Model
 {
-    /** @use HasFactory<\Database\Factories\InventoryFactory> */
     use HasFactory;
 
     protected $fillable = [
@@ -17,25 +16,26 @@ class Inventory extends Model
         'img',
     ];
 
-    protected $guarded = [
-        'id',
-    ];
-
     protected static function booted()
     {
-        static::deleting(function ($inventory){
-            if($inventory->img && Storage::disk('public')->exists($inventory->img)){
+        static::deleting(function ($inventory) {
+            if ($inventory->img && Storage::disk('public')->exists($inventory->img)) {
                 Storage::disk('public')->delete($inventory->img);
             }
         });
 
-        static::updating(function ($inventory){
-            if($inventory->isDirty('img')){
+        static::updating(function ($inventory) {
+            if ($inventory->isDirty('img')) {
                 $oldImg = $inventory->getOriginal('img');
-                if($oldImg && Storage::disk('public')->exists($oldImg)){
+                if ($oldImg && Storage::disk('public')->exists($oldImg)) {
                     Storage::disk('public')->delete($oldImg);
                 }
             }
         });
+    }
+
+    public function peminjamans()
+    {
+        return $this->hasMany(Peminjaman::class, 'barang_id');
     }
 }

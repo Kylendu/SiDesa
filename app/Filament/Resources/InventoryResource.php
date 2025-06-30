@@ -39,12 +39,6 @@ class InventoryResource extends Resource
                     ->numeric()
                     ->minValue(1)
                     ->maxValue(1000),
-                Select::make('kondisi')
-                    ->options([
-                        'Baik' => 'Baik',
-                        'Rusak' => 'Rusak',
-                    ])
-                    ->required(),
                 FileUpload::make('img')
                     ->label('Upload Gambar')
                     ->image()
@@ -65,10 +59,6 @@ class InventoryResource extends Resource
                     ->sortable(),
                 TextColumn::make('jumlah')
                     ->label('Jumlah')
-                    ->searchable()
-                    ->sortable(),
-                TextColumn::make('kondisi')
-                    ->label('Kondisi')
                     ->searchable()
                     ->sortable(),
                 ImageColumn::make('img')

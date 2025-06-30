@@ -7,6 +7,8 @@ use App\Http\Controllers\ResidentController;
 use App\Http\Controllers\InformationController;
 use App\Http\Controllers\ServiceDocumentController;
 use App\Http\Controllers\Village_trainingController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PeminjamanController;
 
 Route::post('/ajaxupload', [ServiceDocumentController::class, 'upload']);
 
@@ -31,4 +33,18 @@ Route::get('/ppid', function () {
 })->name('ppid');
 
 Route::get('/inventories', [\App\Http\Controllers\InventoryController::class, 'index'])->name('inventory');
+
+
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::middleware('auth')->group(function () {
+    Route::post('/peminjaman', [PeminjamanController::class, 'store'])->name('peminjaman.store');
+    Route::get('/profil', [PeminjamanController::class, 'profil'])->name('profil');
+    Route::get('/peminjaman/{id}/download', [PeminjamanController::class, 'download'])->name('peminjaman.download');
+});
+
+Route::get('/peminjaman/acc/{id}', [PeminjamanController::class, 'acc'])->name('peminjaman.acc');
+
 
